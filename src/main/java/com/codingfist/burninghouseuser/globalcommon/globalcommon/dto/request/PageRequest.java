@@ -1,4 +1,4 @@
-package com.codingfist.burninghouseuser.common.dto.request;
+package com.codingfist.burninghouseuser.globalcommon.globalcommon.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

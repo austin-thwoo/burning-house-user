@@ -1,7 +1,8 @@
-package com.codingfist.burninghouseuser.common.dto.response;
+package com.codingfist.burninghouseuser.globalcommon.globalcommon.dto.response;
 
 
-import com.codingfist.burninghouseuser.common.error.model.ErrorCode;
+import com.codingfist.burninghouseuser.globalcommon.globalcommon.error.model.ErrorCode;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,8 @@
-package com.codingfist.burninghouseuser.common.error.exception;
+package com.codingfist.burninghouseuser.globalcommon.globalcommon.error.exception;
 
-import com.codingfist.burninghouseuser.common.dto.response.ErrorResponse;
-import com.codingfist.burninghouseuser.common.error.model.ErrorCode;
+import com.codingfist.burninghouseuser.globalcommon.globalcommon.dto.response.ErrorResponse;
+
+import com.codingfist.burninghouseuser.globalcommon.globalcommon.error.model.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,8 @@ import java.nio.file.AccessDeniedException;
 @ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
+
 
     /**
      * javax.validation.Valid or @Validated 으로 binding error 발생시 발생한다.

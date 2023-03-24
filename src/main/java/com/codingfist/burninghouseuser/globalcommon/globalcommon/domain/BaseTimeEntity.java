@@ -1,4 +1,4 @@
-package com.codingfist.burninghouseuser.common.domain;
+package com.codingfist.burninghouseuser.globalcommon.globalcommon.domain;
 
 
 import jakarta.persistence.EntityListeners;
