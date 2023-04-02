@@ -1,4 +1,4 @@
-package com.codingfist.burninghouseuser.localcommon.model;
+package localCommon.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

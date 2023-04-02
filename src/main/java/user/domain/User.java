@@ -1,4 +1,4 @@
-package com.codingfist.burninghouseuser.user.domain;
+package user.domain;
 
 
 import jakarta.persistence.*;
