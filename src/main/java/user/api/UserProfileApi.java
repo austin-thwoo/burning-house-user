@@ -26,10 +26,10 @@ public class UserProfileApi {
         return new ApiResponse<>(userProfileService.save(command));
     }
 
-    @GetMapping("/overlap/{nickname}")
-    public ApiResponse<Boolean> save(@PathVariable(name = "nickname")String nickname) {
-        return new ApiResponse<>(userProfileService.overlap(nickname));
-    }
+//    @GetMapping("/overlap/{nickname}")
+//    public ApiResponse<Boolean> save(@PathVariable(name = "nickname")String nickname) {
+//        return new ApiResponse<>(userProfileService.overlap(nickname));
+//    }
 
 
 //    @ApiResponses(value = {
@@ -37,10 +37,10 @@ public class UserProfileApi {
 //            @io.swagger.annotations.ApiResponse(code = 404, message = "고객 아이디로 정보를 조회할 수 없습니다.\n삭제되거나 없는 고객입니다.")
 //    })
 //    @ApiOperation(value = "로그인", notes = "로그인->토큰발행")
-    @PostMapping("/login")
-    public ApiResponse<TokenResponse> login(@RequestBody LoginCommand loginCommand) {
-        return new ApiResponse<>(loginService.login(loginCommand));
-    }
+//    @PostMapping("/login")
+//    public ApiResponse<TokenResponse> login(@RequestBody LoginCommand loginCommand) {
+//        return new ApiResponse<>(loginService.login(loginCommand));
+//    }
 
 
 }
