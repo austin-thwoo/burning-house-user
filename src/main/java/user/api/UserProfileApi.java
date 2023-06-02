@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.*;
 import user.application.UserProfileService;
 import user.dto.request.UserProfileCommand;
 import user.dto.response.UserProfileResponse;
+
+import java.util.Date;
+
 import static user.application.UserProfileInterFace.CreateValidationGroup;
 
 @RestController
 @EnableAutoConfiguration
 @RequiredArgsConstructor
 //@Api(value = "미인증 사용자")
-@RequestMapping("/auth")
+@RequestMapping("/user-profile")
 public class UserProfileApi {
 
 
@@ -26,10 +29,15 @@ public class UserProfileApi {
         return new ApiResponse<>(userProfileService.save(command));
     }
 
-//    @GetMapping("/overlap/{nickname}")
-//    public ApiResponse<Boolean> save(@PathVariable(name = "nickname")String nickname) {
-//        return new ApiResponse<>(userProfileService.overlap(nickname));
-//    }
+    @GetMapping("/overlap/{nickname}")
+    public ApiResponse<Boolean> save(@PathVariable(name = "nickname")String nickname) {
+        return new ApiResponse<>(userProfileService.isDuplicated(nickname));
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "안녕하세요. 현재 서버시간은 " + new Date() + "입니다. \n";
+    }
 
 
 //    @ApiResponses(value = {

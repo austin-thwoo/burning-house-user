@@ -1,24 +1,15 @@
 package user.repository;
 
 
-import com.querydsl.core.QueryResults;
-import com.querydsl.core.types.Predicate;
-import com.querydsl.core.types.Projections;
-import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.EntityManager;
 import localCommon.exception.UserNotFoundException;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import user.domain.UserProfile;
 
-
-import java.util.List;
-import java.util.Optional;
 
 import static user.domain.QUserProfile.userProfile;
 
@@ -27,14 +18,13 @@ import static user.domain.QUserProfile.userProfile;
 @Log4j2
 public class UserProfileRepositorySupport extends QuerydslRepositorySupport {
 
+    private final JPAQueryFactory queryFactory;
 
-    private JPAQueryFactory queryFactory;
 
-
-    public UserProfileRepositorySupport(JPAQueryFactory queryFactory) {
+    public UserProfileRepositorySupport(JPAQueryFactory queryFactory, EntityManager entityManager) {
         super(UserProfile.class);
-//        super(UserProfiles.class);
         this.queryFactory = queryFactory;
+
     }
 
 
@@ -44,6 +34,7 @@ public class UserProfileRepositorySupport extends QuerydslRepositorySupport {
           throw new UserNotFoundException("dd",HttpStatus.BAD_REQUEST);
 
       }
+      return new UserProfile();
   }
 
 //    public Page<UserProfileSearchResponseModel> findAllFollowingUserProfileBySearch(Pageable pageable, UserProfiles userProfile, String searchQuery, String beBesty) {

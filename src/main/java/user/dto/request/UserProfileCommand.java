@@ -23,7 +23,7 @@ public class UserProfileCommand {
 
     @NotBlank(groups = {CreateValidationGroup.class})
     @NotNull(groups = {CreateValidationGroup.class})
-    private String userId;
+    private Long userId;
 
     @NotBlank(groups = {CreateValidationGroup.class,UpdateValidationGroup.class})
     @NotNull(groups = {CreateValidationGroup.class,UpdateValidationGroup.class})

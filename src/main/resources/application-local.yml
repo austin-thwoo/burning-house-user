@@ -1,12 +1,23 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /bh/user
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:oracle:thin:@zhosck61umxnno3x_high?TNS_ADMIN:classpath:/Users/austin/Documents/austin/private/project/practiceProject/burning-house/burning-house-user/src/main/resources/Wallet_ZHOSCK61UMXNNO3X
-    username: admin
-    password: Burning1234!
-    driver-class-name: oracle.jdbc.OracleDriver
+#    url: jdbc:oracle:thin:@zhosck61umxnno3x_high?TNS_ADMIN:classpath:/Users/austin/Documents/austin/private/project/practiceProject/burning-house/burning-house-user/src/main/resources/Wallet_ZHOSCK61UMXNNO3X
+    url: jdbc:mariadb://localhost:3306/burning_house_user?characterEncoding=UTF-8&ServerTimezone=UTC
+    username: root
+    password: austin
+#    driver-class-name: oracle.jdbc.OracleDriver
+    driver-class-name: org.mariadb.jdbc.Driver
     hikari:
       connection-timeout: 3000
       validation-timeout: 3000
@@ -16,9 +27,16 @@ spring:
       max-lifetime: 240000
       pool-name: oraPool
   jpa:
+    database-platform: org.hibernate.spatial.dialect.mysql.MySQL56SpatialDialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.mysql.MySQL56SpatialDialect
     properties:
       hibernate:
-        format_sql: 'true'
+        default_batch_fetch_size: 200
+    show-sql: true
+
+
   logging:
     level:
       org:

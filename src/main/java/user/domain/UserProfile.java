@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import user.domain.common.Address;
 import user.domain.common.UserType;
+import user.dto.request.UserProfileCommand;
 
 @Getter
 @NoArgsConstructor
@@ -35,8 +36,13 @@ public class UserProfile extends BaseTimeEntity {
     private UserType userType;
 
 
-
-
-
-
+    public static UserProfile create(UserProfileCommand command) {
+        return UserProfile.builder()
+                .userId(command.getUserId())
+                .nickname(command.getNickname())
+                .address(command.getAddress())
+                .phoneNumber(command.getPhoneNumber())
+                .userType(command.getUserType())
+                .build();
+    }
 }
